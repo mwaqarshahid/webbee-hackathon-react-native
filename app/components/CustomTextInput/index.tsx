@@ -8,19 +8,21 @@ interface CustomInputProps {
   index: number;
   label: string;
   desc: string;
+  type: any;
   handleChange: (index: number, value: string) => void;
 }
 
 const CustomInput: React.FC <CustomInputProps> = (props) => {
-  const { index, label, desc, handleChange } = props;
+  const { index, label, desc, type, handleChange } = props;
 
   return (
     <TextInput
       mode="outlined"
-      label={label}
+      label={type}
       placeholder={label}
       value={desc}
       style={styles.container}
+      keyboardType={type}
       onChange={event => handleChange(index, event.nativeEvent.text)}
     />
   );

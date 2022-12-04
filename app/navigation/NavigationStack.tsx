@@ -28,11 +28,11 @@ const App: React.FC<IProps> = (props: IProps) => {
           },
         }}>
         <Drawer.Screen
-          name="Dashboard"
+          name="Manage Categories"
           component={Dashboard}
         />
         <Drawer.Screen
-          name="Login"
+          name="Dashboard"
           component={Login}
         />
       </Drawer.Navigator>

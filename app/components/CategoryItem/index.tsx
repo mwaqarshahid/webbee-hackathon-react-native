@@ -7,10 +7,11 @@ import styles from './styles';
 interface CategoryItemProps {
   title: string;
   handleAddItem: () => void;
+  showError: boolean;
 }
 
 const CategoryItem: React.FC <CategoryItemProps> = (props) => {
-  const { title, handleAddItem } = props;
+  const { title, handleAddItem, showError } = props;
 
   return (
     <View>
@@ -20,7 +21,10 @@ const CategoryItem: React.FC <CategoryItemProps> = (props) => {
           <Text style={styles.buttonText}>ADD NEW ITEM</Text>
         </TouchableOpacity>
       </View>
-      <Text style={styles.noItemText}>No Items to display</Text>
+      {
+        showError &&
+        <Text style={styles.noItemText}>No Items to display</Text>
+      }
     </View>
   );
 };
